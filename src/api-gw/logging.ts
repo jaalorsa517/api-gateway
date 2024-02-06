@@ -1,6 +1,6 @@
 import morgan from "morgan"
 import { Express } from "express"
 
-export function setupLogin(app: Express) {
+export function setupLoggin(app: Express) {
     app.use(morgan("combined"));
 }

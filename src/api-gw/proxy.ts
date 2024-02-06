@@ -4,6 +4,6 @@ import { createProxyMiddleware } from 'http-proxy-middleware'
 
 export function setupProxies (app: Express, routes:Route[]) {
     routes.forEach(r => {
-        app.use(r.url, createProxyMiddleware(r.proxy));
+        app.use(r.path, createProxyMiddleware(r.proxy));
     })
 }

@@ -1,9 +1,12 @@
 export type Route = {
-    url: string;
+    path: string;
     proxy: Proxy;
-    auth?: boolean;
-    creditCheck?: boolean;
-    rateLimit?: RateLimit;
+    auth?: Auth;
+}
+
+export type Auth = {
+    isEnabled: boolean;
+    rolesAuth: string[];
 }
 
 export type Proxy = {
@@ -17,4 +20,9 @@ export type Proxy = {
 export type RateLimit = {
     windowMs: number;
     max: number;
+}
+
+export type Session = {
+    role: string;
+    isActive: boolean;
 }
