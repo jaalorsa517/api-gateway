@@ -2,19 +2,23 @@
   "name": "api-gateway",
   "version": "1.0.0",
   "description": "Api gateway",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "dev": "tsc -w & node --env-file=.env.development --watch ./dist/index.js"
+    "dev": "tsc && node --env-file=.env.development ./dist/server.js",
+    "build": "tsc",
+    "start": "node --env-file=.env.production ./dist/server.js"
   },
-  "keywords": [],
+  "keywords": [
+    "gateway",
+    "apigw"
+  ],
   "author": "jaalorsa <jaalorsa517@hotmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@reactivex/rxjs": "^6.6.7",
     "express": "^4.18.2",
-    "morgan": "^1.10.0",
-    "rxjs": "^7.8.1"
+    "http-proxy-middleware": "^2.0.6",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
