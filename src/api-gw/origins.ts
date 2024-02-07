@@ -4,7 +4,6 @@ import { ResponseApi } from "../models/class/index.js"
 
 const _corsOrigins = process.env.CORS_ORIGIN || "*"
 const _corsOriginsArray = _corsOrigins.split(",")
-console.log({ _corsOrigins })
 
 function onProxyRes(req: Request, res: Response, next: Function) {
     res.setHeader('X-Content-Type-Options', 'nosniff')

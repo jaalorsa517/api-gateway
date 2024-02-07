@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "webpage-7e920"
+    "default": "webpage-7e920",
+    "development": "webpage-7e920"
   }
 }
