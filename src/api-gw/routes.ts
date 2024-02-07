@@ -1,27 +1,19 @@
-import { Route } from '../models/types/route.types.js';
+import { IncomingMessage } from 'http';
+import { Route } from '../models/types/index.js';
+import { Request } from 'express';
+
 export const ROUTES: Route[] = [
     {
-        path: '/pokemon',
+        path: '/youtube/playlistItems',
         proxy: {
-            target: "https://pokeapi.co/api/v2/pokemon",
+            target: `${process.env.YOUTUBE_API_HOST}`,
             changeOrigin: true,
-            pathRewrite: {
-                [`^/pokemon`]: '',
+            pathRewrite: (path: string, req: Request) => {
+                const newPath: string = path.replace(/\/youtube/, "")
+                const hashQuery: boolean = newPath.includes("?")
+                const paramsInString: string = hashQuery ? "&" : "?"
+                return `${newPath}${paramsInString}key=${process.env.YOUTUBE_APIKEY || ""}`
             },
         },
-        auth:{
-            isEnabled: true,
-            rolesAuth: ['admin']
-        }
-    },
-    {
-        path: '/ability',
-        proxy: {
-            target: "https://pokeapi.co/api/v2/ability",
-            changeOrigin: true,
-            pathRewrite: {
-                [`^/ability`]: '',
-            },
-        }
     },
 ]

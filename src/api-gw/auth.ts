@@ -1,5 +1,6 @@
 import { Express, Request, Response } from "express";
-import { Auth, Route, Session } from "../models/types/route.types.js";
+import { Auth, Route, Session } from "../models/types/index.js";
+import { ResponseApi } from "../models/class/index.js";
 
 
 function hasAuth(auth: Auth): Session {
@@ -20,9 +21,9 @@ export function authSession(app: Express, routes: Route[]) {
         app.use(r.path, (req: Request, res: Response, next: Function) => {
             if (!r.auth?.isEnabled) return next()
             const session: Session = hasAuth(r.auth)
-            if (!hasSessionActive(session)) return res.status(401).json({ status: 401, message: 'Unauthorized' })
+            if (!hasSessionActive(session)) return new ResponseApi(res, { status: 401, message: 'Unauthorized' }).json()
             const isAllowedRole = hasRole(session, r.auth)
-            if (!isAllowedRole) return res.status(403).json({ status: 403, message: 'Unauthorized' })
+            if (!isAllowedRole) return new ResponseApi(res, { status: 403, message: 'Forbidden' }).json()
             next()
         })
     })
