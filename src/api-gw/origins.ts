@@ -1,6 +1,6 @@
 import cors from "cors"
 import { Express, Request, Response } from "express"
-import { ResponseApi } from "../models/class/index.js"
+import { ResponseApi } from "../models/class/index"
 
 const _corsOrigins = process.env.CORS_ORIGIN || "*"
 const _corsOriginsArray = _corsOrigins.split(",")

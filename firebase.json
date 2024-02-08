@@ -7,7 +7,11 @@
         "node_modules",
         ".git",
         "firebase-debug.log",
-        "firebase-debug.*.log"
+        "firebase-debug.*.log",
+        ".husky",
+        "reports",
+        ".github",
+        "test"
       ],
       "predeploy": [
         "npm --prefix \"$RESOURCE_DIR\" run build"

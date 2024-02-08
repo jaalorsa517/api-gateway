@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo INFO: Se inicializa hook pre push pruebas unitarias antes de publicar el cambio
+
+set +e
+
+npm test 2>/dev/null
+if [ $? -ne 0 ]; then
+  echo "ERROR: se ha presentado un error al ejecutar pruebas unitarias (npm test)"
+  exit 1;
+fi
+
+exit 0;

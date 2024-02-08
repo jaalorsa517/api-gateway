@@ -1,9 +1,9 @@
 import express, { Express } from "express";
-import { setupLoggin } from "./logging.js";
-import { ROUTES } from "./routes.js"
-import { setupProxies } from "./proxy.js"
-import { authSession } from "./auth.js";
-import { originsSetup } from "./origins.js";
+import { setupLoggin } from "./logging";
+import { ROUTES } from "./routes"
+import { setupProxies } from "./proxy"
+import { authSession } from "./auth";
+import { originsSetup } from "./origins";
 
 const _app: Express = express();
 

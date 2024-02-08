@@ -1,5 +1,5 @@
 import { Express } from 'express';
-import { Route } from '../models/types/index.js';
+import { Route } from '../models/types/index';
 import { createProxyMiddleware } from 'http-proxy-middleware'
 
 export function setupProxies (app: Express, routes:Route[]) {

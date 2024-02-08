@@ -1,5 +1,5 @@
 import { Response } from "express"
-import { BodyResponseApi } from "../types/index.js"
+import { BodyResponseApi } from "../types/index"
 
 export class ResponseApi {
     res: Response

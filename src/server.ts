@@ -1,4 +1,4 @@
-import {app} from "./api-gw/index.js";
+import {app} from "./api-gw/index";
 
 const port = process.env.PORT_SERVER || 3000;
 
