@@ -48,7 +48,7 @@ jobs:
         uses: afgallo/deploy-firebase-functions@v1.1.0
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          TARGET: production          
+          TARGET: default
 
   release:
     runs-on: ubuntu-latest
