@@ -41,7 +41,6 @@ jobs:
           args: use production && firebase deploy --only functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          CONFIG_VALUES: PORT_SERVER=${{vars.PORT_SERVER}} CORS_ORIGIN=${{vars.CORS_ORIGIN}} YOUTUBE_API_HOST=${{vars.YOUTUBE_API_HOST}} YOUTUBE_APIKEY=${{secrets.YOUTUBE_APIKEY}} YOUTUBE_LIST=${{vars.YOUTUBE_LIST}}
 
   release:
     runs-on: ubuntu-latest
