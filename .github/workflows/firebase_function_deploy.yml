@@ -38,7 +38,7 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@v13.2.1
         with:
-          args: use production && firebase deploy --only functions
+          args: use production && firebase functions:config:set PORT_SERVER=${{vars.PORT_SERVER}} CORS_ORIGIN=${{vars.CORS_ORIGIN}} YOUTUBE_API_HOST=${{vars.YOUTUBE_API_HOST}} YOUTUBE_APIKEY=${{secrets.YOUTUBE_APIKEY}} YOUTUBE_LIST=${{vars.YOUTUBE_LIST}} &&firebase deploy --only functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
