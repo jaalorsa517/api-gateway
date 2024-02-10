@@ -1,7 +1,15 @@
 {
   "projects": {
-    "default": "webpage-7e920",
-    "development": "",
+    "development": "webpage-7e920",
     "production": "webpage-7e920"
+  },
+  "targets": {
+    "webpage-7e920": {
+      "hosting": {
+        "api-gateway": [
+          "api-gateway-7e920"
+        ]
+      }
+    }
   }
 }

@@ -7,3 +7,4 @@ dist-ssr
 .firebase
 reports
 api-gateway
+*.log

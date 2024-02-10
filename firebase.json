@@ -1,4 +1,11 @@
 {
+  "hosting": {
+    "target":"api-gateway",
+    "rewrites": [ {
+      "source": "**",
+      "function": "apigw"
+    } ]
+  },  
   "functions": [
     {
       "source": ".",
