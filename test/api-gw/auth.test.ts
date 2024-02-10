@@ -1,4 +1,4 @@
-import { authSession } from '../../src/api-gw/auth';
+import { authSession } from '../../function/api-gw/auth';
 import express, { Express } from 'express';
 import { ROUTES } from './route.mock';
 

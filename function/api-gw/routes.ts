@@ -1,4 +1,4 @@
-import { Route } from '../models/types/index';
+import { Route } from '../models/types/index.js';
 import { Request } from 'express';
 
 export const ROUTES: Route[] = [

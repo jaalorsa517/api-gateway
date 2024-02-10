@@ -2,10 +2,10 @@
   "name": "api-gateway",
   "version": "2.0.0",
   "description": "Api gateway",
-  "main": "dist/server_function.js",
+  "main": "api-gateway/server_function.js",
   "type": "module",
   "scripts": {
-    "dev": "node --env-file=.env.development --watch ./dist/server.js",
+    "dev": "node --env-file=.env.development --watch api-gateway/server.js",
     "build": "tsc",
     "build:watch": "tsc --watch",
     "test": "jest --coverage",

@@ -1,4 +1,4 @@
-import { setupLoggin } from '../../src/api-gw/logging';
+import { setupLoggin } from '../../function/api-gw/logging';
 import express , { Express } from 'express';
 
 describe('logging', () => {

@@ -3,7 +3,13 @@ import type { Config } from 'jest';
 const config: Config = {
   preset: 'ts-jest',
   testEnvironment: 'node',
+  moduleDirectories: ['node_modules', 'function/models', 'function/api-gw', 'function'],
+  moduleFileExtensions: ['ts', 'js'],
   testRegex: "(/tests/.*|(\\.|/)(test|spec))\\.[tj]s$",
+  moduleNameMapper:{
+    '/function/(.*)$': '<rootDir>/function/$1',
+    '../models/(.*)': '<rootDir>/function/models/$1',
+  },
   reporters: [
     "default",
     [
@@ -28,7 +34,7 @@ const config: Config = {
     "node_modules",
     ".mock.[jt]s",
     "models",
-    "dist",
+    "api-gateway",
     "server*"
   ],
 };

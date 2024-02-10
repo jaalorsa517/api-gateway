@@ -1,4 +1,4 @@
-import { Route } from '../../src/models/types/index.js';
+import { Route } from '../../function/models/types/index.js';
 
 export const ROUTES: Route[] = [
     {

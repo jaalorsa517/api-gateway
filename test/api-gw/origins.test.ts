@@ -1,5 +1,5 @@
 import express, { Express } from 'express';
-import { originsSetup } from '../../src/api-gw/origins';
+import { originsSetup } from '../../api-gateway/api-gw/origins';
 
 describe('Origins', () => {
   const mockApp: Express = express()

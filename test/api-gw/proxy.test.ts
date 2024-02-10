@@ -1,4 +1,4 @@
-import { setupProxies } from '../../src/api-gw/proxy';
+import { setupProxies } from '../../function/api-gw/proxy';
 import express, { Express } from 'express';
 import { ROUTES } from './route.mock';
 
