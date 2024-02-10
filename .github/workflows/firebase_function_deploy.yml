@@ -7,7 +7,7 @@ name: Deploy API Gateway
     branches:
       - main
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: api_gateway
@@ -35,22 +35,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: api_gateway
-    needs: [build]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
       - name: Deploy to Firebase
-        uses: afgallo/deploy-firebase-functions@v1.1.0
+        uses: w9jds/firebase-action@v13.2.1
+        with:
+          args: use production && firebase deploy --only functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          TARGET: production          
-          DEPLOY_ONLY: functions
-          WORKING_DIRECTORY: .
 
   release:
     runs-on: ubuntu-latest
