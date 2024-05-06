@@ -36,7 +36,7 @@ jobs:
         with:
           args: deploy --only functions
         env:
-          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEBPAGE_7E920 }}
           PROJECT_ID: ${{ vars.PROJECT_ID}}
 
   release:
