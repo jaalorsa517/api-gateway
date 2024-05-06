@@ -1,4 +1,5 @@
-import { setupProxies } from '../../function/api-gw/proxy';
+import {describe, jest, beforeEach, expect, it} from "@jest/globals"
+import { setupProxies } from '../src/app/proxy';
 import express, { Express } from 'express';
 import { ROUTES } from './route.mock';
 

@@ -1,4 +1,5 @@
-import { setupLoggin } from '../../function/api-gw/logging';
+import {describe, it, jest, beforeEach, expect } from "@jest/globals"
+import { setupLoggin } from '../src/app/logging';
 import express , { Express } from 'express';
 
 describe('logging', () => {

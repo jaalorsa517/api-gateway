@@ -1,14 +1,21 @@
 {
   "hosting": {
-    "target":"api-gateway",
-    "rewrites": [ {
-      "source": "**",
-      "function": "apigw"
-    } ]
-  },  
+    "target": "api-gateway",
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "apigw"
+      }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
   "functions": [
     {
-      "source": ".",
+      "source": "functions",
       "codebase": "api-gateway",
       "runtime": "nodejs18",
       "ignore": [
@@ -28,7 +35,7 @@
         "test"
       ],
       "predeploy": [
-        "npm run build"
+        "npm --prefix \"$RESOURCE_DIR\" run build"
       ]
     }
   ]

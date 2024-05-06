@@ -1,10 +1,10 @@
 import { Request } from 'express';
-import { Options } from "http-proxy-middleware"
 
 export type Route = {
     path: string;
-    proxy: Options;
+    proxy: Proxy;
     auth?: Auth;
+    pathAllowed: string[];
 }
 
 export type Auth = {
@@ -14,10 +14,11 @@ export type Auth = {
 
 export type Proxy = {
     target: string;
-    forward?: string;
     headers?: Record<string, string>;
-    changeOrigin?: boolean;
-    pathRewrite?: Record<string, string> | ((path: string, req: Request) => string);
+    pathRewrite?: ((req: Request) => string);
+    hasHttps: boolean;
+    timeout: number;
+    hasCache: boolean;
 }
 
 export type RateLimit = {

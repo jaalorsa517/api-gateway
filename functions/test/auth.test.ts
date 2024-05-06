@@ -1,4 +1,5 @@
-import { authSession } from '../../function/api-gw/auth';
+import { describe, jest, beforeEach, it, expect } from "@jest/globals"
+import { authSession } from '../src/app/auth';
 import express, { Express } from 'express';
 import { ROUTES } from './route.mock';
 

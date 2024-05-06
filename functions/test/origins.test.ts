@@ -1,5 +1,6 @@
+import {describe, jest, it, beforeEach, expect} from "@jest/globals"
 import express, { Express } from 'express';
-import { originsSetup } from '../../api-gateway/api-gw/origins';
+import { originsSetup } from '../src/app/origins';
 
 describe('Origins', () => {
   const mockApp: Express = express()
@@ -11,7 +12,7 @@ describe('Origins', () => {
 
   it('debería Iniciar origins_cors', () => {
     originsSetup(mockApp);
-    expect(expressSpy).toHaveBeenCalledTimes(3)
+    expect(expressSpy).toHaveBeenCalledTimes(4)
   });
 
 });

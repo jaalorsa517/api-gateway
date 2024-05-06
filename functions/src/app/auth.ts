@@ -1,6 +1,6 @@
 import { Express, Request, Response } from "express";
-import { Auth, Route, Session } from "../models/types/index.js";
-import { ResponseApi } from "../models/class/index.js";
+import { Auth, Route, Session } from "../models/types";
+import { ResponseApi } from "../models/class";
 
 
 function hasAuth(auth: Auth): Session {

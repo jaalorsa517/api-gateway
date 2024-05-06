@@ -8,3 +8,7 @@ dist-ssr
 reports
 api-gateway
 *.log
+functions/api-gateway/
+**/coverage/
+credentials.json
+firebase-export*
