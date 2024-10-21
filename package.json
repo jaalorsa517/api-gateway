@@ -1,6 +1,6 @@
 {
   "name": "api-gateway",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Api gateway",
   "main": "api-gateway/server_function.js",
   "scripts": {
@@ -14,9 +14,12 @@
   "author": "jaalorsa <jaalorsa517@hotmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "firebase": "^10.10.0",
-    "firebase-admin": "^12.0.0",
-    "firebase-tools": "^13.7.1",
-    "husky": "^9.0.11"
+    "firebase": "^10.14.1",
+    "firebase-admin": "^12.6.0",
+    "firebase-tools": "^13.22.1",
+    "husky": "^9.1.6"
+  },
+  "overrides": {
+    "path-to-regexp": "^8.1.0"
   }
 }
